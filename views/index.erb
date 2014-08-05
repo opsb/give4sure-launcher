@@ -1,0 +1,34 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Give4sure launcher</title>
+		<link rel="apple-touch-icon" href="">
+	</head>
+
+	<body>
+		<h1>Launcher</h1>
+
+		<h2>Retailers</h2>
+		<p>Choose a retailer</p>
+		<ul class="retailers">
+			<% @retailers.each do |retailer| %>
+			<li>
+				<a href="/retailers/<%= retailer.id %>" data-retailer-name="<%= retailer.name %>" data-retailer-touch-icon="<%= retailer.touch_icon_url %>">
+					<%= retailer.name %>
+				</a>
+			</li>
+			<% end %>
+		</ul>
+
+		<div class="instructions" style="display:none;">
+			<h2>To add to your home screen</h2>
+			<ul>
+				<li><img src="/images/nav_bar.jpg" /></li>
+				<li><img src="/images/add_to_home_screen.jpg" /></li>
+			</ul>		
+		</div>
+
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="/javascripts/launcher.js"></script>
+	</body>
+</html>
