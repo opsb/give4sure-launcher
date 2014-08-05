@@ -20,5 +20,4 @@ end
 get '/retailers/:id' do
 	retailer = Retailer.find(params['id'].to_i)
 	redirect to(retailer.home_page_url)
-	erb :retailer
 end
